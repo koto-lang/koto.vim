@@ -14,7 +14,7 @@ syntax keyword kotoCoreLib
   \ contains[] copy create deep_copy get insert is_empty iter remove size sum
   \ args current_dir script_dir script_path type
   \ exists open path read_to_string remove_file seek temp_dir write write_line
-  \ all any consume count each enumerate fold[] keep max min
+  \ all any consume count each enumerate fold[] keep max min min_max
   \ next position skip take to_list to_map to_tuple zip
   \ fill first last pop push resize retain reverse sort sort_copy transform with_size
   \ contains_key keys update values
