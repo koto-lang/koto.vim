@@ -11,12 +11,12 @@ syntax keyword kotoRepeating break continue for in loop until while
 syntax keyword kotoCoreLibModules
   \ koto io iterator list map number range string thread test tuple
 syntax keyword kotoCoreLib
-  \ contains[] copy create deep_copy get insert is_empty iter remove size sum
+  \ contains[] copy create deep_copy get insert is_empty iter remove size sort_copy sum
   \ args current_dir script_dir script_path type
   \ exists open path read_to_string remove_file seek temp_dir write write_line
-  \ all any consume count each enumerate fold[] keep max min min_max
+  \ all any chain consume count each enumerate fold[] keep max min min_max
   \ next position skip take to_list to_map to_tuple zip
-  \ fill first last pop push resize retain reverse sort sort_copy transform with_size
+  \ fill first last pop push resize retain reverse sort transform with_size
   \ contains_key keys update values
   \ abs acos asin atan ceil clamp cos cosh degrees exp exp2 floor log10 log2 ln max min
   \ pi pow radians recip sin sinh sqrt tan tanh tau
