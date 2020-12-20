@@ -2,7 +2,7 @@ if exists("b:current_syntax")
   finish
 endif
 
-syntax keyword kotoConditionals if else match then
+syntax keyword kotoConditionals if else match switch then
 syntax keyword kotoDebug debug
 syntax keyword kotoExceptions catch finally try
 syntax keyword kotoKeywords export from import not num2 num4 return yield
