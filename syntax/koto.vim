@@ -39,6 +39,9 @@ syntax match kotoNumber "\<0o[0-7]\+"
 syntax match kotoNumber "\<0x[0-9a-fA-F]\+"
 syntax match kotoNumber "\<[0-9]\+\%(\.[0-9]\+\)\%(e[+-]\=[0-9_]\+\)*"
 
+syntax match kotoMapKey "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\ze:"
+syntax match kotoLookup "\.\zs\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
+
 highlight default link kotoInlineComment Comment
 highlight default link kotoMultilineComment Comment
 
@@ -51,7 +54,8 @@ highlight default link kotoTodos Todo
 
 highlight default link kotoAsserts Macro
 highlight default link kotoFunction Operator
-highlight default link kotoMember Identifier
+highlight default link kotoMapKey Identifier
+highlight default link kotoLookup Function
 highlight default link kotoOperator Operator
 
 highlight default link kotoBoolean Boolean
