@@ -13,7 +13,7 @@ syntax keyword kotoTodos contained TODO FIXME NOTE
 
 syntax keyword kotoAsserts assert assert_eq assert_ne assert_near
 
-syntax match kotoFunction "|"
+syntax match kotoFunctionArgs "|"
 
 syntax match kotoInlineComment "#.*$"
   \ contains=kotoTodos oneline
@@ -32,6 +32,10 @@ syntax match kotoOperator "="
 syntax match kotoOperator "!="
 syntax match kotoOperator "\.\."
 syntax match kotoOperator "\.\.="
+syntax match kotoOperator "\["
+syntax match kotoOperator "]"
+syntax match kotoOperator "{"
+syntax match kotoOperator "}"
 
 syntax region kotoString start=/"/ end=/"/
 
@@ -55,9 +59,10 @@ highlight default link kotoRepeating Repeat
 highlight default link kotoTodos Todo
 
 highlight default link kotoAsserts Macro
-highlight default link kotoFunction Operator
 highlight default link kotoMapKey Identifier
 highlight default link kotoLookup Function
+
+highlight default link kotoFunctionArgs Operator
 highlight default link kotoOperator Operator
 
 highlight default link kotoBoolean Boolean
