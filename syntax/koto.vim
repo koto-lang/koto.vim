@@ -2,6 +2,7 @@ if exists("b:current_syntax")
   finish
 endif
 
+syntax keyword kotoBoolean true false
 syntax keyword kotoConditionals if else match switch then
 syntax keyword kotoDebug debug
 syntax keyword kotoExceptions catch finally throw try
@@ -32,12 +33,11 @@ syntax match kotoOperator "!="
 
 syntax region kotoString start=/"/ end=/"/
 
-syntax keyword kotoBoolean true false
-syntax match kotoNumber "\v<\d+>"
-syntax match kotoNumber "\v<(\d+_+)+\d+(\.\d+(_+\d+)*)?>"
-syntax match kotoNumber "\v<\d+\.\d+>"
-syntax match kotoNumber "\v<\d*\.?\d+([Ee]-?)?\d+>"
-syntax match kotoMember "\v([^..][.])@<=<\w+>"
+syntax match kotoNumber "\<[0-9]\+"
+syntax match kotoNumber "\<0b[01]\+"
+syntax match kotoNumber "\<0o[0-7]\+"
+syntax match kotoNumber "\<0x[0-9a-fA-F]\+"
+syntax match kotoNumber "\<[0-9]\+\%(\.[0-9]\+\)\%(e[+-]\=[0-9_]\+\)*"
 
 highlight default link kotoInlineComment Comment
 highlight default link kotoMultilineComment Comment
