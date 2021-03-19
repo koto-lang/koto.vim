@@ -30,6 +30,8 @@ syntax match kotoOperator ">"
 syntax match kotoOperator "<"
 syntax match kotoOperator "="
 syntax match kotoOperator "!="
+syntax match kotoOperator "\.\."
+syntax match kotoOperator "\.\.="
 
 syntax region kotoString start=/"/ end=/"/
 
