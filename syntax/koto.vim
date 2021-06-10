@@ -37,7 +37,9 @@ syntax match kotoOperator "]"
 syntax match kotoOperator "{"
 syntax match kotoOperator "}"
 
-syntax region kotoString start=/"/ end=/"/
+syntax region kotoString start=/"/ end=/"/ contains=kotoSpecialChar
+syntax region kotoString start="'" end="'" contains=kotospecialChar
+syntax match kotoSpecialChar contained "\\[\"\\'ntbrf]"
 
 syntax match kotoNumber "\<[0-9]\+"
 syntax match kotoNumber "\<0b[01]\+"
@@ -69,3 +71,4 @@ highlight default link kotoBoolean Boolean
 highlight default link kotoNumber Number
 highlight default link kotoSelf Constant
 highlight default link kotoString String
+highlight default link kotoSpecialChar SpecialChar
