@@ -39,7 +39,7 @@ syntax region kotoString start=/"/ end=/"/
   \ contains=kotoStringEscape,kotoStringTemplateExpression,kotoStringTemplateId
 syntax region kotoString start="'" end="'"
   \ contains=kotoStringEscape,kotoStringTemplateExpression,kotoStringTemplateId
-syntax match kotoStringEscape contained "\\[\$\"\\'ntbrf]"
+syntax match kotoStringEscape contained "\\\%([\$\"\\'ntbrf]\|x[0-9a-fA-F]\{2}\|u{[0-9a-fA-F]\{1,6}}\)"
 syntax region kotoStringTemplateExpression matchgroup=kotoStringTemplateBrace start="${" end="}"
   \ contained contains=ALL
 syntax match kotoStringTemplateId contained "\$\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
