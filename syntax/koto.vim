@@ -32,14 +32,19 @@ syntax match kotoOperator "="
 syntax match kotoOperator "!="
 syntax match kotoOperator "\.\."
 syntax match kotoOperator "\.\.="
-syntax match kotoOperator "\["
-syntax match kotoOperator "]"
-syntax match kotoOperator "{"
-syntax match kotoOperator "}"
 
-syntax region kotoString start=/"/ end=/"/ contains=kotoSpecialChar
-syntax region kotoString start="'" end="'" contains=kotospecialChar
-syntax match kotoSpecialChar contained "\\[\"\\'ntbrf]"
+syntax region kotoInlineMap start="{" end="}" contains=ALL
+
+syntax region kotoString start=/"/ end=/"/
+  \ contains=kotoStringEscape,kotoStringTemplateExpression,kotoStringTemplateId
+syntax region kotoString start="'" end="'"
+  \ contains=kotoStringEscape,kotoStringTemplateExpression,kotoStringTemplateId
+syntax match kotoStringEscape contained "\\[\$\"\\'ntbrf]"
+syntax region kotoStringTemplateExpression matchgroup=kotoStringTemplateBrace start="${" end="}"
+  \ contained contains=ALL
+syntax match kotoStringTemplateId contained "\$\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
+
+syntax match kotoIdentifier "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
 
 syntax match kotoNumber "\<[0-9]\+"
 syntax match kotoNumber "\<0b[01]\+"
@@ -50,6 +55,7 @@ syntax match kotoNumber "\<[0-9]\+\%(\.[0-9]\+\)\%(e[+-]\=[0-9_]\+\)*"
 syntax match kotoMapKey "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\ze:"
 syntax match kotoLookup "\.\zs\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
 
+highlight default link kotoIdentifier Ignore
 highlight default link kotoInlineComment Comment
 highlight default link kotoMultilineComment Comment
 
@@ -70,5 +76,9 @@ highlight default link kotoOperator Operator
 highlight default link kotoBoolean Boolean
 highlight default link kotoNumber Number
 highlight default link kotoSelf Constant
+
 highlight default link kotoString String
-highlight default link kotoSpecialChar SpecialChar
+highlight default link kotoStringEscape SpecialChar
+highlight default link kotoStringTemplateExpression Ignore
+highlight default link kotoStringTemplateBrace Operator
+highlight default link kotoStringTemplateId Operator
