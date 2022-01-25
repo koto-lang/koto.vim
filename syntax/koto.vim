@@ -19,8 +19,11 @@ syntax match kotoFunctionArgs "|"
 
 syntax match kotoInlineComment "#.*$"
   \ contains=kotoTodos oneline
-syntax region kotoMultilineComment start="#-" end="-#"
-  \ contains=kotoTodos,kotoMultilineComment fold
+syntax region kotoMultilineComment
+  \ matchgroup=kotoMultilineComment
+  \ start="#-" end="-#"
+  \ contains=kotoTodos,kotoMultilineComment,@Spell
+  \ fold
 
 syntax keyword kotoOperator and or
 syntax match kotoOperator "+"
