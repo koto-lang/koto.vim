@@ -6,12 +6,14 @@ syntax keyword kotoBoolean true false
 syntax keyword kotoConditionals if else match switch then
 syntax keyword kotoDebug debug
 syntax keyword kotoExceptions catch finally throw try
-syntax keyword kotoKeywords export from import not num2 num4 return yield
+syntax keyword kotoKeywords export from import not return yield
 syntax keyword kotoRepeating break continue for in loop until while
 syntax keyword kotoSelf self
-syntax keyword kotoTodos contained TODO FIXME NOTE
 
 syntax keyword kotoAsserts assert assert_eq assert_ne assert_near
+syntax keyword kotoCoreLib io iterator koto list map os number num2 num4 range string test tuple
+syntax keyword kotoPrelude make_num2 make_num4 print type
+syntax keyword kotoTodos contained TODO FIXME NOTE
 
 syntax match kotoFunctionArgs "|"
 
@@ -64,9 +66,12 @@ highlight default link kotoDebug Debug
 highlight default link kotoExceptions Exception
 highlight default link kotoKeywords Keyword
 highlight default link kotoRepeating Repeat
-highlight default link kotoTodos Todo
 
 highlight default link kotoAsserts Macro
+highlight default link kotoCoreLib Function
+highlight default link kotoPrelude Function
+highlight default link kotoTodos Todo
+
 highlight default link kotoMapKey Identifier
 highlight default link kotoLookup Function
 
