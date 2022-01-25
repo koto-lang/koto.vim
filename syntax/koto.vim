@@ -50,6 +50,7 @@ syntax region kotoStringTemplateExpression matchgroup=kotoStringTemplateBrace st
 syntax match kotoStringTemplateId contained "\$\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
 
 syntax match kotoIdentifier "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
+syntax match kotoMeta "@\%([^[:cntrl:][:space:]\:]\|_\)*"
 
 syntax match kotoNumber "\<[0-9]\+"
 syntax match kotoNumber "\<0b[01]\+"
@@ -61,6 +62,7 @@ syntax match kotoMapKey "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:c
 syntax match kotoLookup "\.\zs\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
 
 highlight default link kotoIdentifier Ignore
+highlight default link kotoMeta Type
 highlight default link kotoInlineComment Comment
 highlight default link kotoMultilineComment Comment
 
