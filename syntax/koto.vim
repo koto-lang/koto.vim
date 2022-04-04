@@ -6,7 +6,7 @@ syntax keyword kotoBoolean true false
 syntax keyword kotoConditionals if else match switch then
 syntax keyword kotoDebug debug
 syntax keyword kotoExceptions catch finally throw try
-syntax keyword kotoKeywords export from import not return yield
+syntax keyword kotoKeywords export from import not null return yield
 syntax keyword kotoRepeating break continue for in loop until while
 syntax keyword kotoSelf self
 
