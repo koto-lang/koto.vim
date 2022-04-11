@@ -22,7 +22,7 @@ syntax match kotoInlineComment "#.*$"
 syntax region kotoMultilineComment
   \ matchgroup=kotoMultilineComment
   \ start="#-" end="-#"
-  \ contains=kotoTodos,kotoMultilineComment,@Spell
+  \ contains=kotoTodos,@Spell
   \ fold
 
 syntax keyword kotoOperator and or
