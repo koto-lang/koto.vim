@@ -61,7 +61,7 @@ syntax match kotoNumber "\<[0-9]\+\%(\.[0-9]\+\)\%(e[+-]\=[0-9_]\+\)*"
 syntax match kotoMapKey "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*\ze:"
 syntax match kotoLookup "\.\zs\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
 
-highlight default link kotoIdentifier Ignore
+highlight default link kotoIdentifier Normal
 highlight default link kotoMeta Type
 highlight default link kotoInlineComment Comment
 highlight default link kotoMultilineComment Comment
@@ -89,6 +89,6 @@ highlight default link kotoSelf Constant
 
 highlight default link kotoString String
 highlight default link kotoStringEscape SpecialChar
-highlight default link kotoStringTemplateExpression Ignore
+highlight default link kotoStringTemplateExpression Normal
 highlight default link kotoStringTemplateBrace Operator
 highlight default link kotoStringTemplateId Operator
