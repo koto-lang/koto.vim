@@ -25,6 +25,9 @@ syntax region kotoMultilineComment
   \ contains=kotoTodos,@Spell
   \ fold
 
+syntax match kotoIdentifier "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
+syntax match kotoMeta "@\%([^[:cntrl:][:space:]\:]\|_\)*"
+
 syntax keyword kotoOperator and or
 syntax match kotoOperator "+"
 syntax match kotoOperator "-"
@@ -48,9 +51,7 @@ syntax match kotoStringEscape contained "\\\%([\$\"\\'ntbrf]\|x[0-9a-fA-F]\{2}\|
 syntax region kotoStringTemplateExpression matchgroup=kotoStringTemplateBrace start="${" end="}"
   \ contained contains=ALL
 syntax match kotoStringTemplateId contained "\$\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
-
-syntax match kotoIdentifier "\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
-syntax match kotoMeta "@\%([^[:cntrl:][:space:]\:]\|_\)*"
+syn region kotoRawString start="r\z(#\{0,255\}\)\z('\|\"\)" end="\z2\z1"
 
 syntax match kotoNumber "\<[0-9]\+"
 syntax match kotoNumber "\<0b[01]\+"
@@ -92,3 +93,4 @@ highlight default link kotoStringEscape SpecialChar
 highlight default link kotoStringTemplateExpression Normal
 highlight default link kotoStringTemplateBrace Operator
 highlight default link kotoStringTemplateId Operator
+highlight default link kotoRawString String
