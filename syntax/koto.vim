@@ -11,8 +11,8 @@ syntax keyword kotoRepeating break continue for in loop until while
 syntax keyword kotoSelf self
 
 syntax keyword kotoAsserts assert assert_eq assert_ne assert_near
-syntax keyword kotoCoreLib io iterator koto list map os number num2 num4 range string test tuple
-syntax keyword kotoPrelude make_num2 make_num4 print type
+syntax keyword kotoCoreLib io iterator koto list map os number range string test tuple
+syntax keyword kotoPrelude print type
 syntax keyword kotoTodos contained TODO FIXME NOTE
 
 syntax match kotoFunctionArgs "|"
