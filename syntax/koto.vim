@@ -44,13 +44,12 @@ syntax match kotoOperator "\.\.="
 syntax region kotoInlineMap start="{" end="}" contains=ALL
 
 syntax region kotoString start=/"/ end=/"/
-  \ contains=kotoStringEscape,kotoStringTemplateExpression,kotoStringTemplateId
+  \ contains=kotoStringEscape,kotoStringTemplateExpression
 syntax region kotoString start="'" end="'"
-  \ contains=kotoStringEscape,kotoStringTemplateExpression,kotoStringTemplateId
+  \ contains=kotoStringEscape,kotoStringTemplateExpression
 syntax match kotoStringEscape contained "\\\%([\$\"\\'ntbrf]\|x[0-9a-fA-F]\{2}\|u{[0-9a-fA-F]\{1,6}}\)"
-syntax region kotoStringTemplateExpression matchgroup=kotoStringTemplateBrace start="${" end="}"
+syntax region kotoStringTemplateExpression matchgroup=kotoStringTemplateBrace start="{" end="}"
   \ contained contains=ALL
-syntax match kotoStringTemplateId contained "\$\%([^[:cntrl:][:space:][:punct:][:digit:]]\|_\)\%([^[:cntrl:][:punct:][:space:]]\|_\)*"
 syn region kotoRawString start="r\z(#\{0,255\}\)\z('\|\"\)" end="\z2\z1"
 
 syntax match kotoNumber "\<[0-9]\+"
